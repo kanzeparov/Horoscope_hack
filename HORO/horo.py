@@ -44,7 +44,7 @@ def horo(first_word = None):
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts([data_for_tok])
     model_load = load_model('lang_model_tass_2.h5')
-    res = generate_seq(model_load, tokenizer, 'Дева', 20)
+    res = generate_seq(model_load, tokenizer, first_word, 10)
 
     return res
 
