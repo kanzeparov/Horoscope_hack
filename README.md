@@ -1,6 +1,6 @@
 # Horoscope_hack
 
-# Structure
+# Структура
 
 <ol type="1" style="font-size: x-large;">
   <li> <a href="https://github.com/kanzeparov/Horoscope_hack#проблема">Проблема</a>
@@ -18,3 +18,23 @@
 <li> <a href="https://github.com/kanzeparov/Horoscope_hack#дальнейшее развитие">Дальнейшее развитие</a>
 <li> <a href="https://github.com/kanzeparov/Horoscope_hack#команда">Команда</a>
 </ol>
+
+# Проблема
+
+# Решение
+
+### Архитектура
+
+### Стек технологий
+
+### Конкурентные преимущества
+
+# Установка
+
+### Мобильное приложение
+
+### Сервер с нейронной сетью
+
+# Дальнейшее развитие
+
+# Команда
