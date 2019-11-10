@@ -50,7 +50,13 @@
 
 ### Мобильное приложение
 
+Android Studio 3.1
+
 ### Сервер с нейронной сетью
+
+Python3, pip3 
+
+Packages: keras,tensorflow,flask
 
 # Дальнейшее развитие
 
