@@ -12,6 +12,7 @@
   <li> <a href="https://github.com/kanzeparov/Horoscope_hack#стек-технологий">Стек технологий</a>
   <li> <a href="https://github.com/kanzeparov/Horoscope_hack#конкурентные-преимущества">Конкурентные преимущества</a>
 </ol>
+<li> <a href="https://github.com/kanzeparov/Horoscope_hack#демо">Демо</a>    
 <li> <a href="https://github.com/kanzeparov/Horoscope_hack#установка">Установка</a>
   <ol type="a" style="font-size: large;">
   <li> <a href="https://github.com/kanzeparov/Horoscope_hack#мобильное-приложение">Мобильное приложение</a>
@@ -27,11 +28,23 @@
 
 # Решение
 
+[![N|Solid](images/03.png)]()
+
 ### Архитектура
+
+[![N|Solid](images/04.png)]()
 
 ### Стек технологий
 
+[![N|Solid](images/05.png)]()
+
 ### Конкурентные преимущества
+
+[![N|Solid](images/06.png)]()
+
+# Демо
+
+[![N|Solid](images/08.png)]()
 
 # Установка
 
@@ -40,6 +53,8 @@
 ### Сервер с нейронной сетью
 
 # Дальнейшее развитие
+
+[![N|Solid](images/07.png)]()
 
 # Команда
 
