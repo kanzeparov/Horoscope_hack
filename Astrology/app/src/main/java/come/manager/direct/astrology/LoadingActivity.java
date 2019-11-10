@@ -11,7 +11,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -41,7 +40,8 @@ public class LoadingActivity extends AppCompatActivity implements IAPITaskCallBa
     private static final int SUCCESS = 99;
 
     private String USER_ID = "604002"; // eg "4545"
-    private String API_KEY = "484005ee37dc7a07357cf530abd9eb77";  // eg "hdkbcsjcn157618678habdkjbck"
+    private String API_KEY = "484005ee37dc7a07357cf530abd9eb77";
+    // eg "https://astrologyapi.com/"
     private String API_END_POINT = "https://api.vedicrishiastro.com/v1/";
     private int astroInteger;// DON'T CHANGE THIS LINE
 
@@ -95,7 +95,7 @@ public class LoadingActivity extends AppCompatActivity implements IAPITaskCallBa
         astroInteger = calculatePeople.getDayFirst().hashCode() + calculatePeople.getMonthFirst().hashCode() +
                 calculatePeople.getYearFirst().hashCode() + calculatePeople.getHourFirst().hashCode() +
                 calculatePeople.getMinuteFirst().hashCode() + calculatePeople.getCityFirst().hashCode();
-        InitDescription.initResult();
+        //InitDescription.initResult();
 //        countNeg = 0;
 //        countNet = 0;
 //        countPos = 0;
@@ -254,7 +254,7 @@ public class LoadingActivity extends AppCompatActivity implements IAPITaskCallBa
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),"Включите интернет",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),"Включите интернет",Toast.LENGTH_LONG).show();
                         onFailure("error");
                     }
                 });

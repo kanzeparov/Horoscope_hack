@@ -10,14 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import come.manager.direct.astrology.pojo.CalculatePeople;
+import come.manager.direct.astrology.pojo.InitDescription;
 import come.manager.direct.astrology.pojo.Post;
-import come.manager.direct.astrology.retrofit.NetworkService;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+//import come.manager.direct.astrology.retrofit.NetworkService;
+//import retrofit2.Call;
+//import retrofit2.Callback;
+//import retrofit2.Response;
 
 public class EndActivity extends AppCompatActivity {
     private CalculatePeople calculatePeople;
@@ -30,19 +30,22 @@ public class EndActivity extends AppCompatActivity {
         setContentView(R.layout.activity_end);
 
         Button button = findViewById(R.id.btn_again);
+
         textView = findViewById(R.id.info_txt_1);
         calculatePeople = getIntent().getParcelableExtra("people");
         int astroInteger = calculatePeople.getDayFirst().hashCode() + calculatePeople.getMonthFirst().hashCode() +
                 calculatePeople.getYearFirst().hashCode() + calculatePeople.getHourFirst().hashCode() +
                 calculatePeople.getMinuteFirst().hashCode() + calculatePeople.getCityFirst().hashCode();
-        Toast.makeText(getApplicationContext(), "Main " + astroInteger % 11, Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), calculatePeople.getDayFirst(), Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), calculatePeople.getMonthFirst(), Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), calculatePeople.getYearFirst(), Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), calculatePeople.getHourFirst(), Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), calculatePeople.getMinuteFirst(), Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), calculatePeople.getCityFirst(), Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), calculatePeople.getCitySecond(), Toast.LENGTH_LONG).show();
+        InitDescription.initResy(Math.abs(astroInteger % 12));
+        textView.setText(InitDescription.s);
+//        Toast.makeText(getApplicationContext(), "Main " + astroInteger % 11, Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), calculatePeople.getDayFirst(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), calculatePeople.getMonthFirst(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), calculatePeople.getYearFirst(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), calculatePeople.getHourFirst(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), calculatePeople.getMinuteFirst(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), calculatePeople.getCityFirst(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), calculatePeople.getCitySecond(), Toast.LENGTH_LONG).show();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,24 +63,24 @@ public class EndActivity extends AppCompatActivity {
             }
         });
 
-        NetworkService.getInstance()
-                .getJSONApi()
-                .getPostWithID(calculatePeople.getHourSecond())
-                .enqueue(new Callback<Post>() {
-                    @Override
-                    public void onResponse(@NonNull Call<Post> call, @NonNull Response<Post> response) {
-                        Post post = response.body();
-
-                        textView.setText("");
-                    }
-
-                    @Override
-                    public void onFailure(@NonNull Call<Post> call, @NonNull Throwable t) {
-
-                        textView.append("Error occurred while getting request!");
-                        t.printStackTrace();
-                    }
-                });
+//        NetworkService.getInstance()
+//                .getJSONApi()
+//                .getPostWithID(calculatePeople.getHourSecond())
+//                .enqueue(new Callback<Post>() {
+//                    @Override
+//                    public void onResponse(@NonNull Call<Post> call, @NonNull Response<Post> response) {
+//                        Post post = response.body();
+//
+//                        textView.setText("");
+//                    }
+//
+//                    @Override
+//                    public void onFailure(@NonNull Call<Post> call, @NonNull Throwable t) {
+//
+//                        textView.append("Error occurred while getting request!");
+//                        t.printStackTrace();
+//                    }
+//                });
     }
 
     private class AsyncTasker extends AsyncTask<Void, Void, Void> {

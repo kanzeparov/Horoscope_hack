@@ -115,6 +115,7 @@
             app:tabTextAppearance="@style/MineCustomTabText"
             android:layout_marginEnd="50dp"
             app:tabIndicatorHeight="0dp"/>
+
         <Button
             android:id="@+id/buttonNext"
             android:layout_width="match_parent"

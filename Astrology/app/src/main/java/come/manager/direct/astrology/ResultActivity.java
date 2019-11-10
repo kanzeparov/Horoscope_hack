@@ -13,11 +13,13 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -64,7 +66,7 @@ public class ResultActivity extends AppCompatActivity {
     private boolean[] result;
     private PieChart pieChart;
     private Button sadBtn;
-    private ArrayList<Result> resultList;
+    private ArrayList<Result> resultList = new ArrayList<>();
     private Button smileBtn;
     private Button netButton;
     private Button button;
@@ -77,32 +79,35 @@ public class ResultActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private int astro;
     private ViewPager vpPager;
+    private int positionDelete;
+    private String status;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        resultList = new ArrayList<>();
         Log.d(TAG, "onCreate: starting to create chart");
 
-        Toast.makeText(getApplicationContext(), new Date(getIntent().getLongExtra("date", 0)).toString(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), new Date(getIntent().getLongExtra("date", 0)).toString(), Toast.LENGTH_LONG).show();
 
         result = getIntent().getBooleanArrayExtra("result");
         astro = getIntent().getIntExtra("hash",0);
         countNeg = 0;
         countNet = 0;
         countPos = 0;
-        InitDescription.initResult();
+        InitDescription.initResultSecond((astro % 12));
         resultList = InitDescription.resultArrayList;
 
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] && resultList.get(i).getType().equals("NEG")) {
+        for (int i = 0; i < resultList.size(); i++) {
+            if (resultList.get(i).getType().equals("NEG")) {
                 countNeg++;
             }
-            if (result[i] && resultList.get(i).getType().equals("NET")) {
+            if (resultList.get(i).getType().equals("NET")) {
                 countNet++;
             }
-            if (result[i] && resultList.get(i).getType().equals("POS")) {
+            if (resultList.get(i).getType().equals("POS")) {
                 countPos++;
             }
         }
@@ -113,16 +118,16 @@ public class ResultActivity extends AppCompatActivity {
         int net = 0;
         int pos = 0;
         int neg = 0;
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] && resultList.get(i).getType().equals("NET")) {
+        for (int i = 0; i < resultList.size(); i++) {
+            if (resultList.get(i).getType().equals("NET")) {
                 infoNet[net] = resultList.get(i).getNameFirst() + "---" + resultList.get(i).getDescription();
                 net++;
             }
-            if (result[i] && resultList.get(i).getType().equals("POS")) {
+            if (resultList.get(i).getType().equals("POS")) {
                 infoPos[pos] = resultList.get(i).getNameFirst() + "---" + resultList.get(i).getDescription();
                 pos++;
             }
-            if (result[i] && resultList.get(i).getType().equals("NEG")) {
+            if (resultList.get(i).getType().equals("NEG")) {
                 infoNeg[neg] = resultList.get(i).getNameFirst() + "---" + resultList.get(i).getDescription();
                 neg++;
             }
@@ -164,7 +169,7 @@ public class ResultActivity extends AppCompatActivity {
                     }
                 }
                 String employee = xData[pos1];
-                Toast.makeText(ResultActivity.this, "Employee " + employee + "\n" + "Sales: $" + sales + "K", Toast.LENGTH_LONG).show();
+                //Toast.makeText(ResultActivity.this, "Employee " + employee + "\n" + "Sales: $" + sales + "K", Toast.LENGTH_LONG).show();
 
                 if (employee.equals(xData[0])) {
                     smileBtn.callOnClick();
@@ -194,6 +199,8 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
+
+
         smileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -220,7 +227,48 @@ public class ResultActivity extends AppCompatActivity {
                     }
 
                     public void onPageSelected(int position) {
+                        positionDelete = position;
+                        status = "POS";
+                    }
+                });
 
+                button.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        // TODO Auto-generated method stub
+                        String[] s = new String[100];
+                        changeClickable(false, true, false);
+                        changeDefault(true, false, true);
+                        vpPager.clearOnPageChangeListeners();
+                        vpPager.setAdapter(null);
+                        switch (status) {
+                            case "NEG":
+                                infoNeg[positionDelete] = "Удалено, в дальнейшем данный пункт показываться не будет!";
+                                MyPagerAdapter adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), infoNeg);
+                                vpPager.setAdapter(adapterViewPager);
+                                vpPager.getAdapter().notifyDataSetChanged();
+                                tabLayout = (TabLayout) findViewById(R.id.tabDots);
+                                tabLayout.setupWithViewPager(vpPager, true);
+                                break;
+                            case "POS":
+                                infoPos[positionDelete] = "Удалено, в дальнейшем данный пункт показываться не будет!";
+                                adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), infoPos);
+                                vpPager.setAdapter(adapterViewPager);
+                                vpPager.getAdapter().notifyDataSetChanged();
+                                tabLayout = (TabLayout) findViewById(R.id.tabDots);
+                                tabLayout.setupWithViewPager(vpPager, true);
+                                break;
+                            case "NET":
+                                infoNet[positionDelete] = "Удалено, в дальнейшем данный пункт показываться не будет!";
+                                adapterViewPager = new MyPagerAdapter(getSupportFragmentManager(), infoNet);
+                                vpPager.setAdapter(adapterViewPager);
+                                vpPager.getAdapter().notifyDataSetChanged();
+                                tabLayout = (TabLayout) findViewById(R.id.tabDots);
+                                tabLayout.setupWithViewPager(vpPager, true);
+                                break;
+
+                        }
+                        return true;
                     }
                 });
             }
@@ -254,7 +302,8 @@ public class ResultActivity extends AppCompatActivity {
                     }
 
                     public void onPageSelected(int position) {
-
+                        positionDelete = position;
+                        status = "NEG";
                     }
                 });
             }
@@ -276,7 +325,7 @@ public class ResultActivity extends AppCompatActivity {
                 tabLayout.setupWithViewPager(vpPager, true);
                 vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     public void onPageScrollStateChanged(int state) {
-                        Toast.makeText(getApplicationContext(), state + "", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(), state + "", Toast.LENGTH_LONG).show();
 
                     }
 
@@ -289,7 +338,8 @@ public class ResultActivity extends AppCompatActivity {
                     }
 
                     public void onPageSelected(int position) {
-
+                        positionDelete = position;
+                        status = "NET";
                     }
                 });
             }
@@ -474,6 +524,12 @@ public class ResultActivity extends AppCompatActivity {
         smileBtn.callOnClick();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        resultList = new ArrayList<>();
+    }
+
     public static int getColorWrapper(Context context, int id) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return context.getColor(id);
@@ -499,4 +555,6 @@ public class ResultActivity extends AppCompatActivity {
 
         }
     }
+
+
 }

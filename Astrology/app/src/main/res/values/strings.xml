@@ -10,10 +10,10 @@
     <string name="second_date_1">Вторая</string>
     <string name="second_date_2">Введите</string>
     <string name="next">Далее</string>
-    <string name="calculate">Рассчитать</string>
+    <string name="calculate">Закончить</string>
     <string name="info_auto"> Начните вводить город</string>
-    <string name="info_auto1">Выберете 2 из 5: Финансы, Спорт, Здоровье, Любовь, Карьера</string>
-    <string name="result">Результат</string>
+    <string name="info_auto1">Выберите 2 из 5: Финансы, Спорт, Здоровье, Любовь, Карьера</string>
+    <string name="result">Звезды говорят</string>
     <string name="smile_face">2</string>
     <string name="sad_face">2</string>
     <string name="neu_face">2</string>

@@ -27,10 +27,10 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+    //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:27.0.0'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.android.support:appcompat-v7:27.0.0'
     implementation 'com.chabbal:slidingdotsplash:1.0.2'
     implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'

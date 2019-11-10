@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
 
 import come.manager.direct.astrology.MainActivity;
 import come.manager.direct.astrology.R;
@@ -58,7 +57,7 @@ public class FragmentPlaceSecond extends Fragment {
         autoCompleteTextView.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
-                Toast.makeText(getActivity(), autoCompleteTextView.getText().toString(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(), autoCompleteTextView.getText().toString(), Toast.LENGTH_LONG).show();
                 mainActivity.setCitySecond(autoCompleteTextView.getText().toString());
             }
 
