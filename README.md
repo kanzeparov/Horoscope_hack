@@ -1,6 +1,6 @@
 # Horoscope_hack
 
-[![N|Solid](1.jpg)](https://startblock.online)
+[![N|Solid](images/1.jpg)](https://startblock.online)
 
 # Структура
 
@@ -43,4 +43,4 @@
 
 # Команда
 
-[![N|Solid](1.jpg)](https://startblock.online)
+[![N|Solid](images/1.jpg)](https://startblock.online)
