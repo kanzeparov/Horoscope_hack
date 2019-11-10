@@ -23,7 +23,7 @@
 
 # Проблема
 
-[N|Solid](1.jpg)
+[N|Solid](images/02.jpg)
 
 # Решение
 
