@@ -1,5 +1,7 @@
 # Horoscope_hack
 
+[![N|Solid](1.jpg)](https://startblock.online)
+
 # Структура
 
 <ol type="1" style="font-size: x-large;">
@@ -21,6 +23,8 @@
 
 # Проблема
 
+[N|Solid](1.jpg)
+
 # Решение
 
 ### Архитектура
@@ -38,3 +42,5 @@
 # Дальнейшее развитие
 
 # Команда
+
+[![N|Solid](1.jpg)](https://startblock.online)
