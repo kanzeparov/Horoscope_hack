@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Astrology</string>
+    <string name="first_date_1">Дата</string>
+    <string name="first_date_2">Время</string>
+    <string name="first_date_3">Место</string>
+    <string name="birth_day">рождения</string>
+    <string name="birth_time">рождения</string>
+    <string name="place">рождения</string>
+    <string name="place1">ваши предпочтения</string>
+    <string name="second_date_1">Вторая</string>
+    <string name="second_date_2">Введите</string>
+    <string name="next">Далее</string>
+    <string name="calculate">Рассчитать</string>
+    <string name="info_auto"> Начните вводить город</string>
+    <string name="info_auto1">Выберете 2 из 5: Финансы, Спорт, Здоровье, Любовь, Карьера</string>
+    <string name="result">Результат</string>
+    <string name="smile_face">2</string>
+    <string name="sad_face">2</string>
+    <string name="neu_face">2</string>
+    <string name="again">Рекомендации к действию</string>
+    <string name="info_text">Данное приложение покажет вам индивидуальный гороскоп</string>
+    <integer-array name="img_id_arr">
+        <item>@layout/place_layout_first</item>
+        <item>@layout/date_layout_first</item>
+        <item>@layout/time_layout_first</item>
+    </integer-array>
+</resources>

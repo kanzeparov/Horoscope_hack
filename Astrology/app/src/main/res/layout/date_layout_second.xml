@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                xmlns:aigestudio="http://schemas.android.com/apk/res-auto"
+                android:layout_margin="15dp"
+                android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content">  <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28dp"
+        android:id="@+id/first_date_id"
+        android:textStyle="bold"
+        android:textColor="@color/text_black"
+        android:text="@string/second_date_1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/text_black"
+            android:layout_below="@+id/first_date_id"
+            android:text="@string/birth_day"/></RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/date_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:layout_margin="40dp"
+        android:weightSum="3">
+
+        <com.aigestudio.wheelpicker.WheelPicker
+            android:id="@+id/wheel_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            aigestudio:wheel_data="@array/dates"
+            aigestudio:wheel_atmospheric="true"
+            aigestudio:wheel_curved="true"
+            aigestudio:wheel_cyclic="true"
+            aigestudio:wheel_item_align="center"
+            aigestudio:wheel_item_text_color="#ffa8a8"
+            aigestudio:wheel_item_text_size="24sp"
+            aigestudio:wheel_selected_item_text_color="@color/button"
+            />
+        <com.aigestudio.wheelpicker.WheelPicker
+            android:id="@+id/wheel_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            aigestudio:wheel_data="@array/months"
+            aigestudio:wheel_atmospheric="true"
+            aigestudio:wheel_curved="true"
+            aigestudio:wheel_cyclic="true"
+            aigestudio:wheel_item_align="center"
+            aigestudio:wheel_item_text_color="#A7A7DB"
+            aigestudio:wheel_item_text_size="24sp"
+            aigestudio:wheel_selected_item_text_color="@color/text_black"
+            />
+        <com.aigestudio.wheelpicker.widgets.WheelYearPicker
+            android:id="@+id/wheel_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            aigestudio:wheel_atmospheric="true"
+            aigestudio:wheel_curved="true"
+            aigestudio:wheel_cyclic="true"
+            aigestudio:wheel_item_align="center"
+            aigestudio:wheel_item_text_color="#A7A7DB"
+            aigestudio:wheel_item_text_size="24sp"
+            aigestudio:wheel_selected_item_text_color="@color/text_black"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:layout_centerVertical="true"
+        android:elevation="1dp"
+        android:stateListAnimator="@null"
+        android:shadowColor="@color/black"
+        android:layout_margin="40dp"
+        android:background="@drawable/plashka"/>
+
+    <!--<Button-->
+    <!--android:id="@+id/my_rounded_sign_in_button"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_margin="20dp"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:text="@string/next"-->
+    <!--android:background="@drawable/btn_rounded"-->
+    <!--android:layout_alignParentRight="true"/>-->
+</RelativeLayout>

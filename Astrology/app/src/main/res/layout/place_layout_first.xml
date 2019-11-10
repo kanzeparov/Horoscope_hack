@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:aigestudio="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/first_date_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first_date_3"
+            android:textSize="28dp"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/first_date_id"
+            android:text="@string/place"
+            android:textColor="@color/text_black"
+            android:textSize="25dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/date_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        >
+
+        <AutoCompleteTextView
+            android:hint="@string/info_auto"
+            android:layout_width="match_parent"
+            android:id="@+id/autotext"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_black"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+    <!--<Button-->
+        <!--android:id="@+id/my_rounded_sign_in_button"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_margin="20dp"-->
+        <!--android:background="@drawable/btn_rounded"-->
+        <!--android:text="@string/next"-->
+        <!--android:textColor="@color/white"/>-->
+</RelativeLayout>

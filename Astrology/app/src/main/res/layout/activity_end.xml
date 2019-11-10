@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+
+    tools:context=".ResultActivity">
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/text_black"
+        android:textStyle="bold"
+        android:text="@string/result"
+        android:textSize="30sp"/>
+
+        <ScrollView
+            android:id="@+id/SCROLLER_ID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/tvResult"
+            android:layout_above="@+id/inst_btn"
+            android:scrollbars="vertical"
+            android:fillViewport="false">
+        <TextView
+            android:id="@+id/info_txt_1"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black_tint"
+            android:gravity="center"
+            android:layout_margin="16dp"
+            android:text="Чтобы узнать, как трансформируются ваши отношения с течением времени, вы можете оставить заявку в нашем инстаграм аккаунте \n\nТакже в нашем инстаграме вы увидите историии реальных клиентов и то, какие возможности предоставляет анализ личных, средних и композитных карт
+\n
+
+"
+            android:textSize="18sp"/>
+
+
+        </ScrollView>
+
+
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/inst_btn"
+        android:padding="20dp"
+        android:layout_above="@+id/btn_again"
+
+        android:background="@drawable/layout_bg_grad"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/inst"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/button"
+        android:layout_gravity="bottom"
+        android:text="@string/again"
+        android:background="@android:color/transparent"
+        android:id="@+id/btn_again"/>
+</RelativeLayout>

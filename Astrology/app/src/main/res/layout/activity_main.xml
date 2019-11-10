@@ -1,0 +1,45 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+     <android.support.v4.view.ViewPager
+         android:id="@+id/vpPager"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+
+     </android.support.v4.view.ViewPager>
+     <LinearLayout
+         android:orientation="horizontal"
+         android:layout_width="match_parent"
+         android:weightSum="3"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true">
+     <android.support.design.widget.TabLayout
+         android:id="@+id/tabDots"
+         android:layout_weight="1"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:tabBackground="@drawable/tab_selector"
+         app:tabGravity="center"
+         app:tabTextAppearance="@style/MineCustomTabText"
+         android:layout_marginEnd="50dp"
+         app:tabIndicatorHeight="0dp"/>
+     <Button
+         android:id="@+id/my_rounded_sign_in_button"
+         android:layout_width="match_parent"
+android:layout_weight="2"
+
+         android:layout_marginBottom="10dp"
+         android:layout_marginStart="5dp"
+         android:textColor="@color/white"
+         android:layout_height="60dp"
+
+
+         android:text="@string/next"
+         android:background="@drawable/btn_rounded"
+         android:layout_alignParentRight="true"/>
+     </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="15dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".HelloActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/icon"
+        android:layout_weight="5"
+        android:src="@drawable/logoo"
+        android:background="@android:color/transparent"
+        android:layout_height="300dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_below="@+id/icon"
+        android:layout_weight="1"
+        android:layout_margin="15dp">
+        <TextView
+            android:id="@+id/testid_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Горосокоп"
+            android:textColor="@color/text_black"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+        <TextView
+            android:id="@+id/testid_2"
+            android:layout_below="@+id/testid_1"
+            android:layout_width="match_parent"
+            android:textColor="@color/text_black"
+            android:layout_height="wrap_content"
+            android:text="на каждый день"
+            android:textSize="25sp"/>
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/testid"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/text_black"
+        android:layout_weight="1"
+        android:text="@string/info_text"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        android:layout_below="@id/info"
+        android:layout_margin="15dp"
+        >
+        <ImageButton
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/image_button"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/insta_btn"
+            />
+
+        <Button
+            android:layout_width="224dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/startbtn"
+            android:textColor="@color/white"
+            android:layout_alignStart="@+id/image_button"
+            android:layout_marginStart="127dp"
+            android:background="@drawable/btn_rounded"
+            android:text="Начать"/>
+    </RelativeLayout>
+
+</LinearLayout>
